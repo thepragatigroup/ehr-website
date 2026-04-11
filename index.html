@@ -6,10 +6,10 @@
   <title>Express HR Solutions — Warehouse Manpower at Scale</title>
   <meta name="description" content="India's most reliable warehouse workforce partner. Express HR Solutions delivers compliant, scalable manpower for your operations.">
 
-  <!-- Fonts -->
+  <!-- Fonts: Big Shoulders Display + Syne + Share Tech Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Share+Tech+Mono&family=Syne:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/main.css">
@@ -20,29 +20,40 @@
 </head>
 <body>
 
+  <!-- Animated film grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
   <!-- NAV -->
   <nav class="nav">
     <a href="#" class="nav__logo">
-      <img src="assets/logo-icon.png" alt="Express HR Solutions" width="40" height="40">
-      <span class="nav__name">Express HR Solutions</span>
+      <img src="assets/logo-icon.png" alt="Express HR Solutions" width="32" height="32">
+      <span class="nav__name">Express HR</span>
     </a>
-    <a href="mailto:contact@expresshrsolutions.com" class="nav__cta">Contact Us</a>
+    <a href="mailto:contact@expresshrsolutions.com" class="nav__cta">→ Contact Us</a>
   </nav>
 
   <!-- HERO -->
   <section id="hero" class="section section--hero">
     <div class="hero__wrapper">
       <div class="hero__bg">
-        <!-- Replace src with real warehouse photo before launch -->
+        <!-- Replace with real warehouse photo before launch -->
         <div class="hero__bg-placeholder"></div>
       </div>
       <div class="hero__content">
-        <h1 class="hero__headline" data-splitting>Manpower at Scale.</h1>
+        <span class="hero__eyebrow">Express HR Solutions — Workforce at Scale</span>
+        <h1 class="hero__headline" aria-label="Manpower at Scale.">
+          <span class="hero__line-1" data-splitting>Manpower</span>
+          <span class="hero__line-2" data-splitting>at Scale.</span>
+        </h1>
         <div class="hero__logomark">
           <img src="assets/logo-icon.png" alt="">
         </div>
+        <div class="hero__rule"></div>
         <p class="hero__sub" data-splitting="words">India's most reliable warehouse workforce partner.</p>
-        <a href="mailto:contact@expresshrsolutions.com" class="hero__cta">Get in Touch →</a>
+        <a href="mailto:contact@expresshrsolutions.com" class="hero__cta">
+          Get in Touch <span class="hero__cta-arrow">→</span>
+        </a>
+        <span class="hero__scroll">Scroll to explore</span>
       </div>
     </div>
   </section>
@@ -50,7 +61,7 @@
   <!-- WHAT WE DO -->
   <section id="services" class="section section--services">
     <div class="services__inner">
-      <p class="section__label">What We Do</p>
+      <p class="section__label">01 — Services</p>
       <div class="services__cards">
         <div class="service-card" data-card="0">
           <span class="service-card__num">01</span>
@@ -78,29 +89,35 @@
 
   <!-- INDUSTRIES -->
   <section id="industries" class="section section--industries">
-    <p class="section__label">Industries We Serve</p>
+    <p class="section__label">02 — Industries We Serve</p>
     <ul class="industries__list">
       <li class="industry-item">
+        <span class="industry-item__idx">01</span>
         <span class="industry-item__text">Retail / E-Commerce</span>
         <span class="industry-item__line"></span>
       </li>
       <li class="industry-item">
+        <span class="industry-item__idx">02</span>
         <span class="industry-item__text">Electronics</span>
         <span class="industry-item__line"></span>
       </li>
       <li class="industry-item">
+        <span class="industry-item__idx">03</span>
         <span class="industry-item__text">FMCG</span>
         <span class="industry-item__line"></span>
       </li>
       <li class="industry-item">
+        <span class="industry-item__idx">04</span>
         <span class="industry-item__text">Construction</span>
         <span class="industry-item__line"></span>
       </li>
       <li class="industry-item">
+        <span class="industry-item__idx">05</span>
         <span class="industry-item__text">Oil &amp; Gas</span>
         <span class="industry-item__line"></span>
       </li>
       <li class="industry-item">
+        <span class="industry-item__idx">06</span>
         <span class="industry-item__text">Corporate Facilities</span>
         <span class="industry-item__line"></span>
       </li>
@@ -110,7 +127,7 @@
   <!-- STATS -->
   <section id="stats" class="section section--stats">
     <div class="stats__inner">
-      <p class="section__label">Our Scale</p>
+      <p class="section__label">03 — Our Scale</p>
       <div class="stats__grid">
         <div class="stat">
           <div class="stat__num-wrap">
@@ -146,9 +163,8 @@
 
   <!-- CLIENT LOGOS -->
   <section id="clients" class="section section--clients">
-    <p class="section__label">Trusted By</p>
+    <p class="section__label">04 — Trusted By</p>
     <div class="clients__grid">
-      <!-- Replace with real logo <img> tags before launch -->
       <div class="client-logo-placeholder">Client Logo</div>
       <div class="client-logo-placeholder">Client Logo</div>
       <div class="client-logo-placeholder">Client Logo</div>
@@ -160,7 +176,7 @@
 
   <!-- WHY CHOOSE US -->
   <section id="why" class="section section--why">
-    <p class="section__label">Why Express HR</p>
+    <p class="section__label">05 — Why Express HR</p>
     <ul class="differentiators">
       <li class="differentiator" data-splitting="words">Full statutory compliance. Always.</li>
       <li class="differentiator" data-splitting="words">On-ground productivity you can measure.</li>
@@ -171,20 +187,24 @@
   <!-- TESTIMONIAL -->
   <section id="testimonial" class="section section--testimonial">
     <blockquote class="testimonial">
-      <p class="testimonial__quote">"Express HR Solutions turned our warehouse operations from a bottleneck into a competitive advantage."</p>
-      <footer class="testimonial__attr">— [Client Name], [Title], [Company]</footer>
+      <div class="testimonial__mark" aria-hidden="true">"</div>
+      <p class="testimonial__quote">Express HR Solutions turned our warehouse operations from a bottleneck into a competitive advantage.</p>
+      <footer class="testimonial__attr">— [Client Name] / [Title] / [Company]</footer>
     </blockquote>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section section--contact">
     <div class="contact__inner">
-      <h2 class="contact__headline">Let's Work Together.</h2>
-      <a href="mailto:contact@expresshrsolutions.com" class="contact__email">contact@expresshrsolutions.com</a>
+      <span class="contact__label">06 — Get in Touch</span>
+      <h2 class="contact__headline">Let's Work<br>Together.</h2>
+      <a href="mailto:contact@expresshrsolutions.com" class="contact__email">
+        contact@expresshrsolutions.com
+      </a>
     </div>
   </section>
 
-  <!-- Scripts -->
+  <!-- Scripts: splitting → lenis → gsap → ScrollTrigger → main -->
   <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
