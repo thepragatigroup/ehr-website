@@ -28,7 +28,7 @@ function initHero() {
       start: 'top top',
       end: '+=200%',
       scrub: 1,
-      pin: '.hero__content',
+      pin: '.hero__wrapper',
       anticipatePin: 1,
     },
   });
@@ -50,9 +50,10 @@ function initHero() {
     }, '-=0.1')
     .to('.hero__cta', { opacity: 1, y: 0, duration: 0.2 }, '-=0.1');
 
-  // Ken Burns on bg image — separate scrub
+  // Ken Burns on bg — separate scrub (runs in parallel with content timeline)
   gsap.to('.hero__bg-placeholder', {
     scale: 1.1,
+    ease: 'none',
     scrollTrigger: {
       trigger: '#hero',
       start: 'top top',
@@ -212,17 +213,20 @@ function initMobileAnimations() {
   gsap.set('.industry-item__text', { opacity: 1, x: 0 });
   gsap.set('.industry-item__line', { scaleX: 1 });
   gsap.set('.differentiator .word', { opacity: 1 });
+  gsap.set('.hero__logomark', { opacity: 1 });
+  gsap.set('.hero__cta', { opacity: 1, y: 0 });
 
   // Simple fade-in for remaining elements
   ['.clients__grid', '.testimonial', '.contact__inner'].forEach(sel => {
     gsap.to(sel, {
       opacity: 1,
       y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: sel,
         start: 'top 85%',
-        end: 'top 60%',
-        scrub: 1,
+        toggleActions: 'play none none none',
       },
     });
   });
