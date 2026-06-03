@@ -149,6 +149,239 @@ section {
 
 
 /* ============================================================
+   CONTACT (Step 9)
+   ============================================================ */
+
+.contact {
+  background: var(--orange);
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__input {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-dark);
+  outline: none;
+  transition: box-shadow var(--transition);
+  appearance: none;
+}
+
+.contact__input::placeholder {
+  color: var(--text-muted);
+}
+
+.contact__input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.55);
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.contact__submit {
+  background: #fff;
+  color: var(--orange);
+  border-color: #fff;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.contact__submit:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+  transform: translateY(-1px);
+}
+
+/* Right column — contact details */
+.contact__right {
+  padding-top: 88px; /* aligns roughly with form fields */
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.contact__detail-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact__right {
+    padding-top: 0;
+  }
+}
+
+/* ============================================================
+   CAREERS (Step 9)
+   ============================================================ */
+
+.careers {
+  background: var(--bg-white);
+}
+
+.careers__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.careers__title {
+  font-size: clamp(22px, 2.5vw, 34px);
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+
+.careers__sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   FOOTER (Step 9)
+   ============================================================ */
+
+.footer {
+  background: var(--navy);
+  padding-top: var(--section-py);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 64px;
+}
+
+.footer__logo {
+  margin-bottom: 16px;
+}
+
+.footer__tagline {
+  font-size: 14px;
+  color: rgba(232, 238, 244, 0.45);
+  line-height: 1.65;
+  max-width: 220px;
+}
+
+.footer__heading {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__link {
+  font-size: 14px;
+  color: rgba(232, 238, 244, 0.55);
+  transition: color var(--transition);
+}
+
+.footer__link:hover {
+  color: var(--orange);
+}
+
+.footer__contact-item {
+  font-size: 14px;
+  color: rgba(232, 238, 244, 0.55);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
+}
+
+.footer__copy {
+  font-size: 13px;
+  color: rgba(232, 238, 244, 0.35);
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__col--brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* ============================================================
    STATS (Step 8)
    ============================================================ */
 

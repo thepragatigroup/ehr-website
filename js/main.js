@@ -85,6 +85,29 @@ gsap.ticker.lagSmoothing(0);
 }());
 
 /* ============================================================
+   CONTACT (Step 9)
+   ============================================================ */
+
+if (!prefersReducedMotion) {
+  gsap.from('.contact__left', {
+    scrollTrigger: { trigger: '.contact', start: 'top 75%' },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.out',
+  });
+
+  gsap.from('.contact__right', {
+    scrollTrigger: { trigger: '.contact', start: 'top 75%' },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.out',
+    delay: 0.15,
+  });
+}
+
+/* ============================================================
    STATS (Step 8)
    ============================================================ */
 
