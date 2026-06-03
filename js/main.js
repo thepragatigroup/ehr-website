@@ -85,6 +85,29 @@ gsap.ticker.lagSmoothing(0);
 }());
 
 /* ============================================================
+   ABOUT (Step 5)
+   ============================================================ */
+
+if (!prefersReducedMotion) {
+  gsap.from('.about__left', {
+    scrollTrigger: { trigger: '.about', start: 'top 72%' },
+    x: -50,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+  });
+
+  gsap.from('.about__right', {
+    scrollTrigger: { trigger: '.about', start: 'top 72%' },
+    x: 50,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    delay: 0.12,
+  });
+}
+
+/* ============================================================
    NAV (Step 2)
    ============================================================ */
 
