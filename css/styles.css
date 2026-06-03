@@ -149,5 +149,142 @@ section {
 
 
 /* ============================================================
-   COMPONENT STYLES ADDED HERE IN SUBSEQUENT STEPS
+   NAV (Step 2)
    ============================================================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 72px;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.nav--scrolled {
+  background: #fff;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav__logo img {
+  display: block;
+}
+
+/* Desktop links */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav__link {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--orange);
+}
+
+/* When nav has white background, links go dark */
+.nav--scrolled .nav__link {
+  color: var(--text-dark);
+}
+
+.nav--scrolled .nav__link:hover {
+  color: var(--orange);
+}
+
+.nav__cta {
+  padding: 10px 22px;
+  font-size: 14px;
+}
+
+/* Hamburger button */
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.nav__burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: background var(--transition), transform var(--transition), opacity var(--transition);
+}
+
+.nav--scrolled .nav__burger span {
+  background: var(--text-dark);
+}
+
+/* Burger → X animation when open */
+.nav__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger.is-open span:nth-child(2) { opacity: 0; }
+.nav__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile overlay */
+.nav__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__overlay.is-open {
+  display: flex;
+}
+
+.nav__overlay-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav__overlay-link {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  transition: color var(--transition);
+}
+
+.nav__overlay-link:hover {
+  color: var(--orange);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .nav__links,
+  .nav__cta {
+    display: none;
+  }
+
+  .nav__burger {
+    display: flex;
+  }
+}

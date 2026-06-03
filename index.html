@@ -19,7 +19,33 @@
 <body>
 
   <!-- NAV (Step 2) -->
-  <nav class="nav" id="nav"></nav>
+  <nav class="nav" id="nav">
+    <div class="container nav__container">
+      <a href="#" class="nav__logo">
+        <img src="assets/logo-icon.png" alt="Express HR Solutions" height="40">
+      </a>
+      <ul class="nav__links">
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#industries" class="nav__link">Industries</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#careers" class="nav__link">Careers</a></li>
+      </ul>
+      <a href="#contact" class="btn btn--primary nav__cta">Get in Touch</a>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" id="navOverlay" aria-hidden="true">
+      <ul class="nav__overlay-links">
+        <li><a href="#services" class="nav__overlay-link">Services</a></li>
+        <li><a href="#industries" class="nav__overlay-link">Industries</a></li>
+        <li><a href="#about" class="nav__overlay-link">About</a></li>
+        <li><a href="#careers" class="nav__overlay-link">Careers</a></li>
+        <li><a href="#contact" class="btn btn--primary">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- HERO (Step 3) -->
   <section class="hero" id="hero"></section>
