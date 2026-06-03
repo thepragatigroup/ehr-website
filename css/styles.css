@@ -149,6 +149,78 @@ section {
 
 
 /* ============================================================
+   TRUST BAR (Step 4)
+   ============================================================ */
+
+.trust-bar {
+  padding: 52px 0;
+  border-bottom: 1px solid #efefef;
+  overflow: hidden;
+}
+
+.trust-bar__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.trust-bar__track-wrap {
+  overflow: hidden;
+  /* Fade edges for a polished look */
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.trust-bar__track {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  width: max-content;
+  animation: trust-scroll 28s linear infinite;
+}
+
+.trust-bar__track:hover {
+  animation-play-state: paused;
+}
+
+/* Text-based placeholder logos — replace inner content with <img> when real logos arrive */
+.trust-bar__logo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-muted);
+  opacity: 0.45;
+  white-space: nowrap;
+  transition: opacity var(--transition);
+  /* When real <img> logos are used, set height: 28px; width: auto; filter: grayscale(1); */
+}
+
+.trust-bar__logo:hover {
+  opacity: 0.85;
+}
+
+/* Scrolls exactly 50% — the duplicate set snaps back seamlessly */
+@keyframes trust-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion — static display */
+@media (prefers-reduced-motion: reduce) {
+  .trust-bar__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+}
+
+/* ============================================================
    HERO (Step 3)
    ============================================================ */
 
