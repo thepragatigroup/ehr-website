@@ -149,6 +149,56 @@ section {
 
 
 /* ============================================================
+   INDUSTRIES (Step 7)
+   ============================================================ */
+
+.industries {
+  background: var(--bg-light);
+}
+
+.industries__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.industry-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: #fff;
+  border: 1.5px solid #e5e5e5;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: default;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.industry-tag i {
+  font-size: 17px;
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.industry-tag:hover {
+  background: var(--orange-tint);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.industry-tag:hover i {
+  color: var(--orange);
+}
+
+/* ============================================================
    SERVICES (Step 6)
    ============================================================ */
 

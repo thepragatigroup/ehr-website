@@ -85,6 +85,21 @@ gsap.ticker.lagSmoothing(0);
 }());
 
 /* ============================================================
+   INDUSTRIES (Step 7)
+   ============================================================ */
+
+if (!prefersReducedMotion) {
+  gsap.from('.industry-tag', {
+    scrollTrigger: { trigger: '.industries__grid', start: 'top 80%' },
+    scale: 0.82,
+    opacity: 0,
+    duration: 0.45,
+    stagger: 0.07,
+    ease: 'back.out(1.5)',
+  });
+}
+
+/* ============================================================
    SERVICES (Step 6)
    ============================================================ */
 
