@@ -873,7 +873,7 @@ body {
     /* 2. Dark overlay: strong top-left (text area) → lighter bottom-right (shows image) */
     linear-gradient(135deg, rgba(10, 22, 40, 0.88) 0%, rgba(10, 22, 40, 0.65) 50%, rgba(10, 22, 40, 0.45) 100%),
     /* 3. Hero photo — bottom layer */
-    url('assets/images/hero-bg.png');
+    url('assets/images/hero-bg.jpg');
   background-size: 28px 28px, cover, cover;
   background-position: 0 0, center, center;
   background-repeat: repeat, no-repeat, no-repeat;
