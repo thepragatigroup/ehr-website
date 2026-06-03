@@ -180,6 +180,60 @@ body {
 
 
 /* ============================================================
+   TESTIMONIAL
+   ============================================================ */
+
+.testimonial {
+  background: var(--bg-light);
+}
+
+.testimonial__container {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.testimonial__icon {
+  font-size: 48px;
+  color: var(--orange);
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.testimonial__quote {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.testimonial__attr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.testimonial__name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.testimonial__company {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
    CONTACT (Step 9)
    ============================================================ */
 
@@ -558,7 +612,7 @@ body {
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -598,13 +652,6 @@ body {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.7;
-}
-
-/* Tablet: 2 columns */
-@media (max-width: 1024px) {
-  .services__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* Mobile: 1 column */
