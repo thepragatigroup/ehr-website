@@ -1,0 +1,153 @@
+/* ============================================================
+   EXPRESS HR SOLUTIONS — styles.css
+   Sections: Tokens → Reset → Typography → Buttons →
+             Layout Utilities → (Nav, Hero, etc. added per step)
+   ============================================================ */
+
+
+/* === 1. DESIGN TOKENS === */
+:root {
+  /* Colours */
+  --orange:       #F47920;
+  --orange-tint:  #FFF4EC;
+  --navy:         #0A1628;
+  --bg-light:     #F8F8F8;
+  --bg-white:     #FFFFFF;
+  --text-dark:    #1A1A2E;
+  --text-light:   #E8EEF4;
+  --text-muted:   #6B7280;
+
+  /* Typography */
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+
+  /* Spacing */
+  --section-py:      clamp(64px, 8vw, 120px);
+  --container-max:   1200px;
+  --container-px:    clamp(20px, 5vw, 48px);
+
+  /* Motion */
+  --transition: 200ms ease;
+}
+
+
+/* === 2. RESET === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Lenis handles smooth scroll — keep this auto */
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-dark);
+  background: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+
+/* === 3. TYPOGRAPHY === */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(42px, 6vw, 80px); font-weight: 800; }
+h2 { font-size: clamp(32px, 4vw, 56px); font-weight: 800; }
+h3 { font-size: clamp(18px, 2vw, 24px); font-weight: 600; }
+
+p {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+
+/* === 4. BUTTONS === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+  border: 2px solid transparent;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+}
+.btn--primary:hover {
+  background: #d9681a;
+  border-color: #d9681a;
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.btn--ghost:hover {
+  border-color: #fff;
+  transform: translateY(-1px);
+}
+
+
+/* === 5. LAYOUT UTILITIES === */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+section {
+  padding: var(--section-py) 0;
+}
+
+
+/* === 6. SECTION TITLE (shared) === */
+.section-title {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 64px;
+}
+
+
+/* ============================================================
+   COMPONENT STYLES ADDED HERE IN SUBSEQUENT STEPS
+   ============================================================ */

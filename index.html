@@ -3,212 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Express HR Solutions — Warehouse Manpower at Scale</title>
-  <meta name="description" content="India's most reliable warehouse workforce partner. Express HR Solutions delivers compliant, scalable manpower for your operations.">
+  <title>Express HR Solutions — India's Most Reliable Workforce Partner</title>
+  <meta name="description" content="End-to-end workforce solutions: warehouse management, manpower deployment, facility management, compliance and payroll across India.">
 
-  <!-- Fonts: Big Shoulders Display + Syne + Share Tech Mono -->
+  <!-- Preconnect for font performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Share+Tech+Mono&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts: Bricolage Grotesque + Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/animations.css">
-
-  <!-- splitting.js -->
-  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Animated film grain overlay -->
-  <div class="grain" aria-hidden="true"></div>
+  <!-- NAV (Step 2) -->
+  <nav class="nav" id="nav"></nav>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="#" class="nav__logo">
-      <img src="assets/logo-icon.png" alt="Express HR Solutions" width="32" height="32">
-      <span class="nav__name">Express HR</span>
-    </a>
-    <a href="mailto:contact@expresshrsolutions.com" class="nav__cta">→ Contact Us</a>
-  </nav>
+  <!-- HERO (Step 3) -->
+  <section class="hero" id="hero"></section>
 
-  <!-- HERO -->
-  <section id="hero" class="section section--hero">
-    <div class="hero__wrapper">
-      <div class="hero__bg">
-        <!-- Replace with real warehouse photo before launch -->
-        <div class="hero__bg-placeholder"></div>
-      </div>
-      <div class="hero__content">
-        <span class="hero__eyebrow">Express HR Solutions — Workforce at Scale</span>
-        <h1 class="hero__headline" aria-label="Manpower at Scale.">
-          <span class="hero__line-1" data-splitting>Manpower</span>
-          <span class="hero__line-2" data-splitting>at Scale.</span>
-        </h1>
-        <div class="hero__logomark">
-          <img src="assets/logo-icon.png" alt="">
-        </div>
-        <div class="hero__rule"></div>
-        <p class="hero__sub" data-splitting="words">India's most reliable warehouse workforce partner.</p>
-        <a href="mailto:contact@expresshrsolutions.com" class="hero__cta">
-          Get in Touch <span class="hero__cta-arrow">→</span>
-        </a>
-        <span class="hero__scroll">Scroll to explore</span>
-      </div>
-    </div>
-  </section>
+  <!-- TRUST BAR (Step 4) -->
+  <section class="trust-bar"></section>
 
-  <!-- WHAT WE DO -->
-  <section id="services" class="section section--services">
-    <div class="services__inner">
-      <p class="section__label">01 — Services</p>
-      <div class="services__cards">
-        <div class="service-card" data-card="0">
-          <span class="service-card__num">01</span>
-          <h3 class="service-card__title">Warehouse Operations</h3>
-          <p class="service-card__desc">Inventory management, pallet movement, dock coordination — fully managed on your floor.</p>
-        </div>
-        <div class="service-card" data-card="1">
-          <span class="service-card__num">02</span>
-          <h3 class="service-card__title">Workforce Deployment</h3>
-          <p class="service-card__desc">Background-verified, trained manpower deployed to your site within days, not weeks.</p>
-        </div>
-        <div class="service-card" data-card="2">
-          <span class="service-card__num">03</span>
-          <h3 class="service-card__title">Compliance & Governance</h3>
-          <p class="service-card__desc">Full PF, ESI, and labour law compliance. Every worker, every site. Zero liability for you.</p>
-        </div>
-        <div class="service-card" data-card="3">
-          <span class="service-card__num">04</span>
-          <h3 class="service-card__title">Payroll & Attendance</h3>
-          <p class="service-card__desc">Automated payroll processing and real-time attendance tracking across all your facilities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ABOUT (Step 5) -->
+  <section class="about" id="about"></section>
 
-  <!-- INDUSTRIES -->
-  <section id="industries" class="section section--industries">
-    <p class="section__label">02 — Industries We Serve</p>
-    <ul class="industries__list">
-      <li class="industry-item">
-        <span class="industry-item__idx">01</span>
-        <span class="industry-item__text">Retail / E-Commerce</span>
-        <span class="industry-item__line"></span>
-      </li>
-      <li class="industry-item">
-        <span class="industry-item__idx">02</span>
-        <span class="industry-item__text">Electronics</span>
-        <span class="industry-item__line"></span>
-      </li>
-      <li class="industry-item">
-        <span class="industry-item__idx">03</span>
-        <span class="industry-item__text">FMCG</span>
-        <span class="industry-item__line"></span>
-      </li>
-      <li class="industry-item">
-        <span class="industry-item__idx">04</span>
-        <span class="industry-item__text">Construction</span>
-        <span class="industry-item__line"></span>
-      </li>
-      <li class="industry-item">
-        <span class="industry-item__idx">05</span>
-        <span class="industry-item__text">Oil &amp; Gas</span>
-        <span class="industry-item__line"></span>
-      </li>
-      <li class="industry-item">
-        <span class="industry-item__idx">06</span>
-        <span class="industry-item__text">Corporate Facilities</span>
-        <span class="industry-item__line"></span>
-      </li>
-    </ul>
-  </section>
+  <!-- SERVICES (Step 6) -->
+  <section class="services" id="services"></section>
 
-  <!-- STATS -->
-  <section id="stats" class="section section--stats">
-    <div class="stats__inner">
-      <p class="section__label">03 — Our Scale</p>
-      <div class="stats__grid">
-        <div class="stat">
-          <div class="stat__num-wrap">
-            <span class="stat__num" data-target="15000">0</span>
-            <span class="stat__suffix">+</span>
-          </div>
-          <span class="stat__label">Workforce Deployed</span>
-        </div>
-        <div class="stat">
-          <div class="stat__num-wrap">
-            <span class="stat__num" data-target="80">0</span>
-            <span class="stat__suffix">+</span>
-          </div>
-          <span class="stat__label">Active Sites</span>
-        </div>
-        <div class="stat">
-          <div class="stat__num-wrap">
-            <span class="stat__num" data-target="20">0</span>
-            <span class="stat__suffix">+</span>
-          </div>
-          <span class="stat__label">Cities Served</span>
-        </div>
-        <div class="stat">
-          <div class="stat__num-wrap">
-            <span class="stat__num" data-target="50">0</span>
-            <span class="stat__suffix">+</span>
-          </div>
-          <span class="stat__label">Clients</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- INDUSTRIES (Step 7) -->
+  <section class="industries" id="industries"></section>
 
-  <!-- CLIENT LOGOS -->
-  <section id="clients" class="section section--clients">
-    <p class="section__label">04 — Trusted By</p>
-    <div class="clients__grid">
-      <div class="client-logo-placeholder">Client Logo</div>
-      <div class="client-logo-placeholder">Client Logo</div>
-      <div class="client-logo-placeholder">Client Logo</div>
-      <div class="client-logo-placeholder">Client Logo</div>
-      <div class="client-logo-placeholder">Client Logo</div>
-      <div class="client-logo-placeholder">Client Logo</div>
-    </div>
-  </section>
+  <!-- STATS (Step 8) -->
+  <section class="stats"></section>
 
-  <!-- WHY CHOOSE US -->
-  <section id="why" class="section section--why">
-    <p class="section__label">05 — Why Express HR</p>
-    <ul class="differentiators">
-      <li class="differentiator" data-splitting="words">Full statutory compliance. Always.</li>
-      <li class="differentiator" data-splitting="words">On-ground productivity you can measure.</li>
-      <li class="differentiator" data-splitting="words">Scale fast. No compromises.</li>
-    </ul>
-  </section>
+  <!-- CONTACT (Step 9) -->
+  <section class="contact" id="contact"></section>
 
-  <!-- TESTIMONIAL -->
-  <section id="testimonial" class="section section--testimonial">
-    <blockquote class="testimonial">
-      <div class="testimonial__mark" aria-hidden="true">"</div>
-      <p class="testimonial__quote">Express HR Solutions turned our warehouse operations from a bottleneck into a competitive advantage.</p>
-      <footer class="testimonial__attr">— [Client Name] / [Title] / [Company]</footer>
-    </blockquote>
-  </section>
+  <!-- CAREERS (Step 10) -->
+  <section class="careers" id="careers"></section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section section--contact">
-    <div class="contact__inner">
-      <span class="contact__label">06 — Get in Touch</span>
-      <h2 class="contact__headline">Let's Work<br>Together.</h2>
-      <a href="mailto:contact@expresshrsolutions.com" class="contact__email">
-        contact@expresshrsolutions.com
-      </a>
-    </div>
-  </section>
+  <!-- FOOTER (Step 10) -->
+  <footer class="footer"></footer>
 
-  <!-- Scripts: splitting → lenis → gsap → ScrollTrigger → main -->
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+  <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script type="module" src="js/main.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>
