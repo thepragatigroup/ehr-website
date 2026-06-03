@@ -85,6 +85,21 @@ gsap.ticker.lagSmoothing(0);
 }());
 
 /* ============================================================
+   SERVICES (Step 6)
+   ============================================================ */
+
+if (!prefersReducedMotion) {
+  gsap.from('.service-card', {
+    scrollTrigger: { trigger: '.services__grid', start: 'top 78%' },
+    y: 40,
+    opacity: 0,
+    duration: 0.65,
+    stagger: 0.1,
+    ease: 'power2.out',
+  });
+}
+
+/* ============================================================
    ABOUT (Step 5)
    ============================================================ */
 

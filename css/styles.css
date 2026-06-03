@@ -149,6 +149,72 @@ section {
 
 
 /* ============================================================
+   SERVICES (Step 6)
+   ============================================================ */
+
+.services {
+  background: var(--bg-white);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 36px 28px;
+  border: 1px solid transparent;
+  border-left: 3px solid transparent;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+  border-left-color: var(--orange);
+  background: #fff;
+}
+
+.service-card__icon {
+  font-size: 32px;
+  color: var(--orange);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card__name {
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.service-card__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
    ABOUT (Step 5)
    ============================================================ */
 
