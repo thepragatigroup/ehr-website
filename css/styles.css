@@ -149,6 +149,90 @@ section {
 
 
 /* ============================================================
+   STATS (Step 8)
+   ============================================================ */
+
+.stats {
+  background: var(--navy);
+}
+
+.stats__title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 64px;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.stats__item {
+  padding: 56px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stats__item:last-child {
+  border-right: none;
+}
+
+.stats__num {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 5vw, 80px);
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stats__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  opacity: 0.6;
+  line-height: 1.4;
+}
+
+/* Tablet: 2×2 */
+@media (max-width: 900px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats__item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stats__item:nth-child(3),
+  .stats__item:nth-child(4) {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stats__item:nth-child(4) {
+    border-right: none;
+  }
+}
+
+/* Mobile: stack */
+@media (max-width: 480px) {
+  .stats__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats__item {
+    padding: 36px 20px;
+  }
+}
+
+/* ============================================================
    INDUSTRIES (Step 7)
    ============================================================ */
 

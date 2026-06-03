@@ -85,6 +85,53 @@ gsap.ticker.lagSmoothing(0);
 }());
 
 /* ============================================================
+   STATS (Step 8)
+   ============================================================ */
+
+(function initStats() {
+  const counters = document.querySelectorAll('.stats__num');
+  if (!counters.length) return;
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const obj    = { val: 0 };
+
+    gsap.to(obj, {
+      val: target,
+      duration: 2,
+      ease: 'power2.out',
+      onUpdate() {
+        // Use Indian number formatting (e.g. 50,000)
+        el.textContent = Math.round(obj.val).toLocaleString('en-IN') + suffix;
+      },
+      onComplete() {
+        // Ensure exact final value
+        el.textContent = target.toLocaleString('en-IN') + suffix;
+      },
+    });
+  }
+
+  if (prefersReducedMotion) {
+    // Show final values immediately without animation
+    counters.forEach(el => {
+      const target = parseInt(el.dataset.count, 10);
+      el.textContent = target.toLocaleString('en-IN') + (el.dataset.suffix || '');
+    });
+    return;
+  }
+
+  ScrollTrigger.create({
+    trigger: '.stats',
+    start: 'top 70%',
+    once: true,  // fire once — counters shouldn't reset on re-scroll
+    onEnter() {
+      counters.forEach(animateCounter);
+    },
+  });
+}());
+
+/* ============================================================
    INDUSTRIES (Step 7)
    ============================================================ */
 
