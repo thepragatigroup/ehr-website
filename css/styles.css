@@ -148,6 +148,37 @@ section {
 }
 
 
+/* === 7. SCROLL ANCHOR OFFSET ===
+   Prevents fixed nav (72px) from covering section headings
+   when an anchor link is clicked. ========================= */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+
+/* === 8. OVERFLOW SAFETY ===
+   Prevents horizontal scroll on mobile caused by
+   elements animating in from off-screen. ================= */
+body {
+  overflow-x: hidden;
+}
+
+
+/* === 9. REDUCED MOTION — CSS CATCH-ALL ===
+   GSAP animations are already gated in JS.
+   This handles any CSS transitions/animations
+   not covered there. ==================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
 /* ============================================================
    CONTACT (Step 9)
    ============================================================ */
