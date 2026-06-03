@@ -339,6 +339,8 @@ body {
 }
 
 .footer__logo {
+  height: 36px;
+  width: auto;
   margin-bottom: 16px;
 }
 
@@ -887,7 +889,8 @@ body {
 }
 
 .nav__logo img {
-  display: block;
+  height: 40px;
+  width: auto;
 }
 
 /* Desktop links */
