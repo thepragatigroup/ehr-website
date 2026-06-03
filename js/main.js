@@ -31,6 +31,60 @@ gsap.ticker.lagSmoothing(0);
 
 
 /* ============================================================
+   HERO (Step 3)
+   ============================================================ */
+
+(function initHero() {
+  const title = document.querySelector('.hero__title');
+  if (!title) return;
+
+  // Split headline into per-word spans with an overflow-hidden wrapper
+  // so words slide up from below (no SplitText plugin needed)
+  const rawHTML = title.innerHTML;
+  // Preserve <br> tags — split each text node by spaces
+  title.innerHTML = rawHTML.replace(/([^<>\s][^<>]*[^<>\s]|[^\s<>])/g, (match) => {
+    // Wrap each word (non-tag content) in clip+word spans
+    return match.split(' ').map(word =>
+      word ? `<span class="hero__word-wrap"><span class="hero__word">${word}</span></span>` : ''
+    ).join(' ');
+  });
+
+  const words = title.querySelectorAll('.hero__word');
+  const sub   = document.querySelector('.hero__sub');
+  const ctas  = document.querySelector('.hero__ctas');
+  const stats = document.querySelector('.hero__stats');
+
+  if (prefersReducedMotion) {
+    // Skip animation — elements are already visible
+    return;
+  }
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  tl.from(words, {
+    y: '110%',
+    opacity: 0,
+    duration: 0.75,
+    stagger: 0.055,
+  })
+  .from(sub, {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+  }, '-=0.3')
+  .from(ctas, {
+    y: 16,
+    opacity: 0,
+    duration: 0.5,
+  }, '-=0.3')
+  .from(stats, {
+    y: 12,
+    opacity: 0,
+    duration: 0.5,
+  }, '-=0.25');
+}());
+
+/* ============================================================
    NAV (Step 2)
    ============================================================ */
 
