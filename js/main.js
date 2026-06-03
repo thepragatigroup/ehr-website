@@ -38,16 +38,23 @@ gsap.ticker.lagSmoothing(0);
   const title = document.querySelector('.hero__title');
   if (!title) return;
 
-  // Split headline into per-word spans with an overflow-hidden wrapper
-  // so words slide up from below (no SplitText plugin needed)
-  const rawHTML = title.innerHTML;
-  // Preserve <br> tags — split each text node by spaces
-  title.innerHTML = rawHTML.replace(/([^<>\s][^<>]*[^<>\s]|[^\s<>])/g, (match) => {
-    // Wrap each word (non-tag content) in clip+word spans
-    return match.split(' ').map(word =>
-      word ? `<span class="hero__word-wrap"><span class="hero__word">${word}</span></span>` : ''
-    ).join(' ');
-  });
+  // Reliable word-split:
+  // 1. Split on <br> to preserve intentional line breaks
+  // 2. Split each line into words
+  // 3. Wrap each word — no spaces in join (margin-right on .hero__word-wrap handles gaps)
+  const lines = title.innerHTML.split(/<br\s*\/?>/i);
+
+  title.innerHTML = lines
+    .map(line =>
+      line.trim()
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(word =>
+          `<span class="hero__word-wrap"><span class="hero__word">${word}</span></span>`
+        )
+        .join('') // no space character — avoids double-spacing with margin-right
+    )
+    .join('<br>');
 
   const words = title.querySelectorAll('.hero__word');
   const sub   = document.querySelector('.hero__sub');
@@ -55,7 +62,6 @@ gsap.ticker.lagSmoothing(0);
   const stats = document.querySelector('.hero__stats');
 
   if (prefersReducedMotion) {
-    // Skip animation — elements are already visible
     return;
   }
 

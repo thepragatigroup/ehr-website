@@ -899,7 +899,12 @@ body {
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
-  margin-right: 0.22em; /* word spacing */
+  margin-right: 0.26em; /* sole word-gap — no space chars in HTML */
+}
+
+/* Last word per line shouldn't have trailing gap before <br> */
+.hero__word-wrap:last-of-type {
+  margin-right: 0;
 }
 
 .hero__word {
