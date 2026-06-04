@@ -8,6 +8,6 @@ module.exports = {
     ogImage: (data) =>
       data.ogImage ||
       data.featured_image ||
-      "https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg",
+      "https://www.expresshrsolutions.com/assets/og-image.jpg",
   },
 };
