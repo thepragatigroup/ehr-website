@@ -1100,6 +1100,13 @@ body {
   max-width: 760px;
 }
 
+.hero__logo {
+  display: block;
+  height: 48px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
 .hero__eyebrow {
   font-size: 13px;
   letter-spacing: 0.22em;
@@ -1210,9 +1217,25 @@ body {
   height: 72px;
 }
 
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
 .nav__logo img {
   height: 40px;
   width: auto;
+  flex-shrink: 0;
+}
+
+.nav__brand-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 /* Desktop links */
@@ -1235,6 +1258,10 @@ body {
 
 /* When nav has white background, links go dark */
 .nav--scrolled .nav__link {
+  color: var(--text-dark);
+}
+
+.nav--scrolled .nav__brand-name {
   color: var(--text-dark);
 }
 
