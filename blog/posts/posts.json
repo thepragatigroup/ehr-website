@@ -1,4 +1,10 @@
 {
   "layout": "post.njk",
-  "permalink": "/blog/{{ page.fileSlug }}/"
+  "permalink": "/blog/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "description": "{% if description %}{{ description }}{% elif excerpt %}{{ excerpt }}{% endif %}",
+    "ogImage": "{% if ogImage %}{{ ogImage }}{% elif featured_image %}{{ featured_image }}{% else %}https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg{% endif %}",
+    "canonical": "https://www.expresshrsolutions.com{{ page.url }}",
+    "ogType": "article"
+  }
 }
