@@ -32,7 +32,9 @@ collections:
         name: date
         widget: datetime
         format: "YYYY-MM-DD"
-        default: ""
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: false
 
       - label: Category
         name: category
