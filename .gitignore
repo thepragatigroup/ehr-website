@@ -1,2 +1,9 @@
 node_modules/
 _site/
+.vercel/
+.DS_Store
+**/.DS_Store
+PROJECT_CONTEXT.md
+docs/
+preview-themes.html
+assets/OG-image.png

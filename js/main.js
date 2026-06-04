@@ -56,10 +56,11 @@ gsap.ticker.lagSmoothing(0);
     )
     .join('<br>');
 
-  const words = title.querySelectorAll('.hero__word');
-  const sub   = document.querySelector('.hero__sub');
-  const ctas  = document.querySelector('.hero__ctas');
-  const stats = document.querySelector('.hero__stats');
+  const words   = title.querySelectorAll('.hero__word');
+  const eyebrow = document.querySelector('.hero__eyebrow');
+  const sub     = document.querySelector('.hero__sub');
+  const ctas    = document.querySelector('.hero__ctas');
+  const stats   = document.querySelector('.hero__stats');
 
   if (prefersReducedMotion) {
     return;
@@ -67,12 +68,17 @@ gsap.ticker.lagSmoothing(0);
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  tl.from(words, {
+  tl.from(eyebrow, {
+    y: 14,
+    opacity: 0,
+    duration: 0.5,
+  })
+  .from(words, {
     y: '110%',
     opacity: 0,
     duration: 0.75,
     stagger: 0.055,
-  })
+  }, '-=0.2')
   .from(sub, {
     y: 20,
     opacity: 0,
