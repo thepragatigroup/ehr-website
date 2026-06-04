@@ -1,7 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: thepragatigroup/ehr-website
   branch: main
-  base_url: https://heroic-kitsune-6942f0.netlify.app
+  base_url: https://express-hr-solutions-pi.vercel.app
+  auth_endpoint: api/auth
 
 # Cloudinary media library integration
 # Replace cloud_name and api_key with your Cloudinary credentials before going live
