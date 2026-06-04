@@ -12,7 +12,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("blog", function(collectionApi) {
     return collectionApi
       .getFilteredByGlob("blog/posts/*.md")
-      .sort((a, b) => b.date - a.date);
+      .sort((a, b) => b.date.valueOf() - a.date.valueOf());
   });
 
   // ── Filters
@@ -50,7 +50,6 @@ module.exports = function(eleventyConfig) {
     },
     templateFormats: ["njk", "md"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    passthroughFileCopy: false
+    markdownTemplateEngine: "njk"
   };
 };
