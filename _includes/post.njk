@@ -1,0 +1,46 @@
+---
+layout: base.njk
+---
+
+{% set readingTime = content | readTime %}
+
+<article class="post-page">
+  <div class="post-inner">
+
+    <nav class="post-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> &nbsp;/&nbsp;
+      <a href="/blog/">Blog</a> &nbsp;/&nbsp;
+      {{ title }}
+    </nav>
+
+    <div class="post-cat">{{ category }}</div>
+
+    <h1 class="post-title">{{ title }}</h1>
+
+    <div class="post-meta-bar">
+      <div class="post-author">
+        <div class="post-author__avatar"></div>
+        <div>
+          <div class="post-author__name">{{ author }}</div>
+          <div class="post-author__role">Express HR Solutions</div>
+        </div>
+      </div>
+      <div class="post-date">{{ date | fullDate }} &nbsp;&middot;&nbsp; {{ readingTime }} min read</div>
+    </div>
+
+    {% if featured_image %}
+    <img
+      class="post-featured-img"
+      src="{{ featured_image }}"
+      alt="{{ title }}"
+    >
+    {% endif %}
+
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+
+    <a href="/blog/" class="post-back">&larr; Back to all posts</a>
+
+  </div>
+</article>
