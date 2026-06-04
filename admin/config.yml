@@ -5,13 +5,11 @@ backend:
   base_url: https://www.expresshrsolutions.com
   auth_endpoint: api/auth
 
-# Cloudinary media library integration
-# Replace cloud_name and api_key with your Cloudinary credentials before going live
 media_library:
   name: cloudinary
   config:
-    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
-    api_key: YOUR_CLOUDINARY_API_KEY
+    cloud_name: dqqfevyhv
+    api_key: 561581483725843
 
 # Fallback local media folder (used if Cloudinary is not configured)
 media_folder: assets/images/blog
