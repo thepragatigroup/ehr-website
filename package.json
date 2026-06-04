@@ -1,0 +1,12 @@
+{
+  "name": "ehr-website",
+  "version": "1.0.0",
+  "description": "Express HR Solutions website",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --serve --port 3457"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
