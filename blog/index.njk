@@ -1,0 +1,70 @@
+---
+layout: base.njk
+title: "Blog — Express HR Solutions"
+description: "Workforce strategy, operations insights, and compliance updates from the Express HR Solutions team."
+canonical: "https://www.expresshrsolutions.com/blog/"
+---
+
+<section class="blog-listing">
+  <div class="container">
+
+    <div class="blog-listing__header">
+      <div class="eyebrow">Our Blog</div>
+      <h1 class="blog-listing__title">Insights &amp; Updates</h1>
+      <p class="blog-listing__desc">Workforce strategy, operations thinking, and compliance updates from the Express HR team.</p>
+    </div>
+
+    <div class="blog-filters">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="Industry Insights">Industry Insights</button>
+      <button class="filter-pill" data-filter="Compliance">Compliance</button>
+      <button class="filter-pill" data-filter="Case Study">Case Studies</button>
+      <button class="filter-pill" data-filter="Company News">Company News</button>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+      {% for post in collections.blog %}
+      <article class="blog-card" data-category="{{ post.data.category }}">
+        <a href="{{ post.url }}">
+          <img
+            class="blog-card__img"
+            src="{{ post.data.featured_image }}"
+            alt="{{ post.data.title }}"
+            loading="lazy"
+          >
+        </a>
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">{{ post.data.category }}</span>
+            <span class="blog-card__date">{{ post.date | monthYear }}</span>
+          </div>
+          <h2 class="blog-card__title">
+            <a href="{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.data.title }}</a>
+          </h2>
+          <p class="blog-card__excerpt">{{ post.data.excerpt }}</p>
+          <a href="{{ post.url }}" class="blog-card__link">Read &rarr;</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function() {
+    var pills = document.querySelectorAll('.filter-pill');
+    var cards = document.querySelectorAll('#blogGrid .blog-card');
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        var filter = pill.dataset.filter;
+        pills.forEach(function(p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        cards.forEach(function(card) {
+          var match = filter === 'all' || card.dataset.category === filter;
+          card.style.display = match ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
