@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Cloudinary media library integration
+# Replace cloud_name and api_key with your Cloudinary credentials before going live
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
+    api_key: YOUR_CLOUDINARY_API_KEY
+
+# Fallback local media folder (used if Cloudinary is not configured)
+media_folder: assets/images/blog
+public_folder: /assets/images/blog
+
+publish_mode: simple
+
+collections:
+  - name: blog
+    label: Blog Posts
+    folder: blog/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: "Keep under 60 characters for best SEO."
+
+      - label: Publish Date
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        default: ""
+
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Industry Insights
+          - Compliance
+          - Case Study
+          - Company News
+
+      - label: Author
+        name: author
+        widget: string
+        default: "Express HR Solutions"
+
+      - label: Excerpt
+        name: excerpt
+        widget: string
+        hint: "1–2 sentences. Shows in blog cards and search results. Max 160 characters."
+
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        hint: "Upload via Cloudinary. Will appear at top of post and in blog cards."
+
+      - label: Featured on Homepage
+        name: featured
+        widget: boolean
+        default: false
+        hint: "Toggle on to show this post in the homepage carousel. Only 3 posts can be featured at a time — if more than 3 are toggled, the 3 most recent are shown."
+
+      - label: Body
+        name: body
+        widget: markdown
