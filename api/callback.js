@@ -15,10 +15,18 @@ export default async function handler(req, res) {
   const { access_token, error } = await r.json();
   if (error || !access_token) return res.status(400).send(error || 'OAuth failed');
 
-  const content = JSON.stringify({ token: access_token, provider: 'github' });
+  const token = access_token.trim();
   res.setHeader('Content-Type', 'text/html');
   res.send(`<!DOCTYPE html><html><body><script>
-    window.opener.postMessage('authorization:github:success:' + ${JSON.stringify(content)}, '*');
-    window.close();
+    (function() {
+      function receiveMessage(e) {
+        window.opener.postMessage(
+          'authorization:github:success:' + JSON.stringify({ token: ${JSON.stringify(token)}, provider: 'github' }),
+          e.origin
+        );
+      }
+      window.addEventListener('message', receiveMessage, false);
+      window.opener.postMessage('authorizing:github', '*');
+    })();
   </script></body></html>`);
 }
