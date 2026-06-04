@@ -3,10 +3,6 @@ layout: base.njk
 ---
 
 {% set readingTime = content | readTime %}
-{% set description = description or excerpt %}
-{% set ogImage = ogImage or featured_image or "https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg" %}
-{% set canonical = "https://www.expresshrsolutions.com" + page.url %}
-{% set ogType = "article" %}
 
 <article class="post-page">
   <div class="post-inner">
