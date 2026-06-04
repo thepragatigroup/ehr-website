@@ -42,6 +42,11 @@ module.exports = function(eleventyConfig) {
     return Math.max(1, Math.ceil(words / 200));
   });
 
+  // "2025-06-01" — ISO date for sitemap lastmod
+  eleventyConfig.addFilter("isoDate", function(date) {
+    return new Date(date).toISOString().slice(0, 10);
+  });
+
   return {
     dir: {
       input: ".",
