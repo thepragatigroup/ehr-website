@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type"        content="{{ ogType or 'website' }}">
+  <meta property="og:url"         content="{{ canonical or 'https://www.expresshrsolutions.com' }}">
+  <meta property="og:image"       content="{{ ogImage or 'https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg' }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image"       content="{{ ogImage or 'https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg' }}">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ canonical or 'https://www.expresshrsolutions.com' }}">
+
+  <!-- Preconnect for font performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts: Bricolage Grotesque + Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  {% set p = "" if isHomepage else "/" %}
+
+  <nav class="nav" id="nav">
+    <div class="container nav__container">
+      <a href="{{ p }}#hero" class="nav__logo">
+        <img src="/assets/logo-icon.png" alt="Express HR Solutions" height="36">
+      </a>
+      <ul class="nav__links">
+        <li><a href="{{ p }}#about"      class="nav__link">About</a></li>
+        <li><a href="{{ p }}#services"   class="nav__link">Services</a></li>
+        <li><a href="{{ p }}#industries" class="nav__link">Industries</a></li>
+        <li><a href="/blog/"             class="nav__link">Blog</a></li>
+        <li><a href="{{ p }}#careers"    class="nav__link">Careers</a></li>
+      </ul>
+      <a href="{{ p }}#contact" class="btn btn--primary nav__cta">Get in Touch</a>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__overlay" id="navOverlay" aria-hidden="true">
+      <ul class="nav__overlay-links">
+        <li><a href="{{ p }}#about"      class="nav__overlay-link">About</a></li>
+        <li><a href="{{ p }}#services"   class="nav__overlay-link">Services</a></li>
+        <li><a href="{{ p }}#industries" class="nav__overlay-link">Industries</a></li>
+        <li><a href="/blog/"             class="nav__overlay-link">Blog</a></li>
+        <li><a href="{{ p }}#careers"    class="nav__overlay-link">Careers</a></li>
+        <li><a href="{{ p }}#contact"    class="btn btn--primary">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  {{ content | safe }}
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__col footer__col--brand">
+        <img src="/assets/logo-icon.png" alt="Express HR Solutions" height="36" class="footer__logo">
+        <p class="footer__tagline">Building India's Most Reliable Workforce-Driven Logistics Ecosystem.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="{{ p }}#services"    class="footer__link">Services</a></li>
+          <li><a href="{{ p }}#industries"  class="footer__link">Industries</a></li>
+          <li><a href="{{ p }}#about"       class="footer__link">About</a></li>
+          <li><a href="/blog/"              class="footer__link">Blog</a></li>
+          <li><a href="{{ p }}#careers"     class="footer__link">Careers</a></li>
+          <li><a href="{{ p }}#contact"     class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Contact</h4>
+        <p class="footer__contact-item">info@expresshrsolutions.com</p>
+        <p class="footer__contact-item">+91 99673 26161</p>
+        <p class="footer__contact-item">Mumbai, India</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p class="footer__copy">© 2026 Express HR Solutions. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Netlify Identity redirect handler (required for Decap CMS OAuth) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  <!-- Main JS -->
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
