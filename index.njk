@@ -277,6 +277,45 @@ canonical: "https://www.expresshrsolutions.com"
     </div>
   </section>
 
+  <!-- BLOG CAROUSEL -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="eyebrow">Latest Insights</div>
+      <h2 class="section-title">From the Field</h2>
+      <p class="section-subtitle">Workforce strategy, compliance updates, and operations thinking from our team.</p>
+
+      <div class="blog-carousel">
+        {% for post in collections.blog | featuredPosts %}
+        <article class="blog-card">
+          <a href="{{ post.url }}">
+            <img
+              class="blog-card__img"
+              src="{{ post.data.featured_image }}"
+              alt="{{ post.data.title }}"
+              loading="lazy"
+            >
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__cat">{{ post.data.category }}</span>
+              <span class="blog-card__date">{{ post.date | monthYear }}</span>
+            </div>
+            <h3 class="blog-card__title">
+              <a href="{{ post.url }}" style="color:inherit;text-decoration:none;">{{ post.data.title }}</a>
+            </h3>
+            <p class="blog-card__excerpt">{{ post.data.excerpt }}</p>
+            <a href="{{ post.url }}" class="blog-card__link">Read &rarr;</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div class="blog-section__foot">
+        <a href="/blog/" class="btn btn--outline">View All Posts</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT (Step 9) -->
   <section class="contact" id="contact">
     <div class="container contact__container">
