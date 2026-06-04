@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+  base_url: https://heroic-kitsune-6942f0.netlify.app
 
 # Cloudinary media library integration
 # Replace cloud_name and api_key with your Cloudinary credentials before going live
