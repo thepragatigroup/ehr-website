@@ -46,11 +46,6 @@ collections:
           - Case Study
           - Company News
 
-      - label: Author
-        name: author
-        widget: string
-        default: "Express HR Solutions"
-
       - label: Excerpt
         name: excerpt
         widget: string
