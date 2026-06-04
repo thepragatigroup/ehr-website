@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "EHR Website Dev",
+      "runtimeExecutable": "/Users/rahuldas/.nvm/versions/node/v24.14.0/bin/node",
+      "runtimeArgs": [
+        "/Users/rahuldas/.nvm/versions/node/v24.14.0/bin/npx",
+        "@11ty/eleventy",
+        "--serve",
+        "--port",
+        "3457"
+      ],
+      "port": 3457
+    }
+  ]
+}
