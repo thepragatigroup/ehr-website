@@ -323,8 +323,7 @@ canonical: "https://www.expresshrsolutions.com"
 
       <div class="contact__left">
         <h2 class="contact__title">Ready to Transform Your Workforce Operations?</h2>
-        <!-- Replace REPLACE_WITH_YOUR_ID with your Formspree form ID -->
-        <form class="contact__form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
+        <form class="contact__form" id="contactForm">
           <div class="contact__field">
             <input type="text" name="name" placeholder="Your Name" required class="contact__input">
           </div>
@@ -337,9 +336,11 @@ canonical: "https://www.expresshrsolutions.com"
           <div class="contact__field">
             <textarea name="message" placeholder="Tell us about your requirement" rows="4" class="contact__input contact__textarea"></textarea>
           </div>
-          <button type="submit" class="btn contact__submit">
+          <button type="submit" class="btn contact__submit" id="contactSubmit">
             Send Message <i class="ph ph-paper-plane-tilt"></i>
           </button>
+          <p class="contact__success" id="contactSuccess" hidden>✓ Message sent! We'll get back to you shortly.</p>
+          <p class="contact__error" id="contactError" hidden>Something went wrong. Please call us directly.</p>
         </form>
       </div>
 

@@ -334,6 +334,25 @@ body {
   transform: translateY(-1px);
 }
 
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact__success {
+  margin-top: 12px;
+  color: #4ade80;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contact__error {
+  margin-top: 12px;
+  color: #f87171;
+  font-size: 15px;
+}
+
 /* Right column — contact details */
 .contact__right {
   padding-top: 88px; /* aligns roughly with form fields */

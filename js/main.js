@@ -251,3 +251,43 @@ navOverlay.querySelectorAll('a').forEach(link => {
     document.body.style.overflow = '';
   });
 });
+
+
+/* === CONTACT FORM === */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('contactSubmit');
+    const successMsg = document.getElementById('contactSuccess');
+    const errorMsg = document.getElementById('contactError');
+
+    // Reset state
+    successMsg.hidden = true;
+    errorMsg.hidden = true;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const data = Object.fromEntries(new FormData(contactForm));
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        successMsg.hidden = false;
+        contactForm.reset();
+      } else {
+        errorMsg.hidden = false;
+      }
+    } catch {
+      errorMsg.hidden = false;
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message <i class="ph ph-paper-plane-tilt"></i>';
+    }
+  });
+}
