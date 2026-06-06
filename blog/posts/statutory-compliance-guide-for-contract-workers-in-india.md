@@ -7,7 +7,6 @@ excerpt: India's contract workers now make up 42% of organised manufacturing.
 featured_image: https://res.cloudinary.com/dqqfevyhv/image/upload/v1780737589/ChatGPT_Image_Jun_6_2026_at_02_49_05_PM_ahmoc7.png
 featured: true
 ---
-
 # The Complete Guide to Statutory Compliance for Contract Workers in India
 
 Your contractor deploys 50 workers to your facility. Wages are paid on time, work is delivered, and the arrangement looks clean on paper. Then a labour inspector arrives — and discovers those workers were never enrolled in ESIC or remitted into PF. Under Indian law, that's your problem.
@@ -71,7 +70,7 @@ EPFO now cross-references payroll data from contractors against UAN records. If 
 2. Confirm every worker deployed to your site has an active UAN linked to your contractor's EPFO account.
 3. Request Form 5 (new joiners) and Form 10 (leavers) each month — delays in these filings are typically the first sign of a deeper problem.
 
-![Contract workers in Indian manufacturing — a sector where EPFO enforcement scrutiny has increased significantly since 2023](https://images.unsplash.com/photo-1764114909312-c27b89ec7223?fm=jpg&q=60&w=1200&auto=format&fit=crop)
+![Indian factory workers on a production line with a supervisor reviewing compliance documents — PF and ESIC obligations apply to all contract workers](https://res.cloudinary.com/dqqfevyhv/image/upload/v1780739180/ChatGPT_Image_Jun_6_2026_at_03_15_49_PM_ssi7tr.png)
 
 ---
 
