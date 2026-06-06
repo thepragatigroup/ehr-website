@@ -18,10 +18,10 @@ This guide covers every law you need to know, the obligations that fall on you a
 
 **Key Takeaways**
 
-- Contract workers now form 42% of organised manufacturing in India (ASI, MoSPI, 2023-24).
-- Principal employers carry joint liability for PF, ESIC, and wage defaults by their contractors.
-- Four Labour Codes effective 21 November 2025 raised financial penalties significantly.
-- EPFO Enrolment Scheme 2025 closes 30 April 2026 — the window to regularise undeclared contract workers at minimal cost.
+1. Contract workers now form 42% of organised manufacturing in India (ASI, MoSPI, 2023-24).
+2. Principal employers carry joint liability for PF, ESIC, and wage defaults by their contractors.
+3. Four Labour Codes effective 21 November 2025 raised financial penalties significantly.
+4. EPFO Enrolment Scheme 2025 closes 30 April 2026 — the window to regularise undeclared contract workers at minimal cost.
 
 ---
 
