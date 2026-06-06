@@ -115,19 +115,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <!-- Lenis smooth scroll -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <!-- Netlify Identity redirect handler (required for Decap CMS OAuth) -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
   <!-- Main JS -->
   <script src="/js/main.js"></script>
 

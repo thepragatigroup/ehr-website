@@ -1,3 +1,9 @@
+const ALLOWED_ORIGINS = [
+  'https://www.expresshrsolutions.com',
+  'https://expresshrsolutions.com',
+  'https://express-hr-solutions-pi.vercel.app',
+];
+
 export default async function handler(req, res) {
   const { code } = req.query;
   if (!code) return res.status(400).send('Missing code');
@@ -16,10 +22,13 @@ export default async function handler(req, res) {
   if (error || !access_token) return res.status(400).send(error || 'OAuth failed');
 
   const token = access_token.trim();
+  const allowedOriginsJson = JSON.stringify(ALLOWED_ORIGINS);
   res.setHeader('Content-Type', 'text/html');
   res.send(`<!DOCTYPE html><html><body><script>
     (function() {
+      var ALLOWED = ${allowedOriginsJson};
       function receiveMessage(e) {
+        if (!ALLOWED.includes(e.origin)) return;
         window.opener.postMessage(
           'authorization:github:success:' + JSON.stringify({ token: ${JSON.stringify(token)}, provider: 'github' }),
           e.origin
