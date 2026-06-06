@@ -18,10 +18,10 @@ This guide covers every law you need to know, the obligations that fall on you a
 
 **Key Takeaways**
 
-1. Contract workers now form 42% of organised manufacturing in India (ASI, MoSPI, 2023-24).
-2. Principal employers carry joint liability for PF, ESIC, and wage defaults by their contractors.
-3. Four Labour Codes effective 21 November 2025 raised financial penalties significantly.
-4. EPFO Enrolment Scheme 2025 closes 30 April 2026 — the window to regularise undeclared contract workers at minimal cost.
+- Contract workers now form 42% of organised manufacturing in India (ASI, MoSPI, 2023-24).
+- Principal employers carry joint liability for PF, ESIC, and wage defaults by their contractors.
+- Four Labour Codes effective 21 November 2025 raised financial penalties significantly.
+- EPFO Enrolment Scheme 2025 closes 30 April 2026 — the window to regularise undeclared contract workers at minimal cost.
 
 ---
 
@@ -97,13 +97,13 @@ India's four Labour Codes took effect on 21 November 2025, consolidating 29 exis
 
 **Revised penalties.** The number of imprisonable offences was reduced from 87 to 22, and 16 offence types are now compoundable — meaning financial settlement instead of prosecution. But the financial penalties themselves are substantially higher ([India Briefing](https://www.india-briefing.com/news/india-labor-code-penalties-guide-2025-41211.html/), 2025):
 
-| Violation | First Offence | Repeat Offence |
-|-----------|---------------|----------------|
-| Wage non-payment or underpayment | ₹50,000 | ₹1 lakh + 3 months imprisonment |
-| Record-keeping failure | ₹10,000 | ₹40,000 + 1 month imprisonment |
-| Safety violation (general) | ₹2 lakh | ₹2 lakh + 1 year imprisonment |
-| Non-registration (Social Security Code) | ₹50,000 | + ₹30,000 per continuing day |
-| Social security contribution default (wilful) | ₹1 lakh | Up to 3 years imprisonment |
+**Labour Code Penalty Reference (effective November 2025)**
+
+- **Wage underpayment** — First offence: ₹50,000 | Repeat: ₹1 lakh + 3 months imprisonment
+- **Record-keeping failure** — First offence: ₹10,000 | Repeat: ₹40,000 + 1 month imprisonment
+- **Safety violation** — First offence: ₹2 lakh | Repeat: ₹2 lakh + 1 year imprisonment
+- **Non-registration (Social Security Code)** — First offence: ₹50,000 | Repeat: +₹30,000/day
+- **Contribution default (wilful)** — First offence: ₹1 lakh | Repeat: Up to 3 years imprisonment
 
 *Source: India Briefing, "India Labor Code Penalties Guide 2025"*
 
