@@ -7,7 +7,8 @@ module.exports = {
     ogType: () => "article",
     ogImage: (data) =>
       data.ogImage ||
-      data.featured_image ||
-      "https://www.expresshrsolutions.com/assets/og-image.jpg",
+      (data.featured_image && !data.featured_image.includes('placeholder')
+        ? data.featured_image
+        : "https://www.expresshrsolutions.com/assets/og-image.jpg"),
   },
 };

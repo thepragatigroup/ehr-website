@@ -425,6 +425,46 @@ body {
 }
 
 /* ============================================================
+   404 PAGE
+   ============================================================ */
+
+.error-page__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.error-page__code {
+  font-size: clamp(80px, 15vw, 140px);
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.error-page__title {
+  font-size: clamp(24px, 3vw, 40px);
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.error-page__sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.error-page__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
    FOOTER (Step 9)
    ============================================================ */
 
@@ -1591,6 +1631,26 @@ body {
 }
 .post-body a { color: var(--orange); }
 .post-body img { width: 100%; height: auto; margin: 24px 0; }
+
+.post-cta {
+  margin-top: 48px;
+  padding: 20px 24px;
+  background: var(--bg-light);
+  border-left: 3px solid var(--orange);
+  border-radius: 4px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.post-cta a {
+  color: var(--orange);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.post-cta a:hover {
+  text-decoration: underline;
+}
 
 .post-back {
   display: inline-flex;

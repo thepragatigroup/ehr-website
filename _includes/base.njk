@@ -7,24 +7,37 @@
   <meta name="description" content="{{ description }}">
 
   <!-- Open Graph -->
-  <meta property="og:title"       content="{{ title }}">
-  <meta property="og:description" content="{{ description }}">
-  <meta property="og:type"        content="{{ ogType or 'website' }}">
-  <meta property="og:url"         content="{{ canonical or 'https://www.expresshrsolutions.com' }}">
-  <meta property="og:image"       content="{{ ogImage or 'https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg' }}">
+  <meta property="og:title"        content="{{ title }}">
+  <meta property="og:description"  content="{{ description }}">
+  <meta property="og:type"         content="{{ ogType or 'website' }}">
+  <meta property="og:url"          content="{{ canonical or 'https://www.expresshrsolutions.com/' }}">
+  <meta property="og:image"        content="{{ ogImage or 'https://www.expresshrsolutions.com/assets/og-image.jpg' }}">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="en_IN">
+  <meta property="og:site_name"    content="Express HR Solutions">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:image"       content="{{ ogImage or 'https://express-hr-solutions-pi.vercel.app/assets/og-image.jpg' }}">
+  <meta name="twitter:image"       content="{{ ogImage or 'https://www.expresshrsolutions.com/assets/og-image.jpg' }}">
 
   <!-- Canonical -->
-  <link rel="canonical" href="{{ canonical or 'https://www.expresshrsolutions.com' }}">
+  <link rel="canonical" href="{{ canonical or 'https://www.expresshrsolutions.com/' }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/logo-icon.png">
+  <link rel="apple-touch-icon" href="/assets/logo-icon.png">
 
   <!-- Preconnect for font performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload LCP hero background -->
+  {% if isHomepage %}
+  <link rel="preload" as="image" href="/assets/images/hero-bg.jpg" fetchpriority="high">
+  {% endif %}
 
   <!-- Google Fonts: Bricolage Grotesque + Plus Jakarta Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -109,14 +122,14 @@
   </footer>
 
   <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+  <script defer src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
   <!-- GSAP + ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <!-- Lenis smooth scroll -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <!-- Main JS -->
-  <script src="/js/main.js"></script>
+  <script defer src="/js/main.js"></script>
 
 </body>
 </html>

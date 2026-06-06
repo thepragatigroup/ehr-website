@@ -4,8 +4,39 @@ isHomepage: true
 title: "Express HR Solutions — India's Reliable Workforce Partner"
 description: "End-to-end workforce solutions: warehouse management, manpower deployment, facility management, compliance and payroll across India."
 ogImage: "https://www.expresshrsolutions.com/assets/og-image.jpg"
-canonical: "https://www.expresshrsolutions.com"
+canonical: "https://www.expresshrsolutions.com/"
 ---
+
+  <!-- Organization + WebSite structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "@id": "https://www.expresshrsolutions.com/#organization",
+    "name": "Express HR Solutions",
+    "url": "https://www.expresshrsolutions.com/",
+    "logo": "https://www.expresshrsolutions.com/assets/logo-icon.png",
+    "description": "End-to-end workforce solutions: warehouse management, manpower deployment, facility management, compliance and payroll across India.",
+    "telephone": "+919967326161",
+    "email": "info@expresshrsolutions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharashtra",
+      "addressCountry": "IN"
+    },
+    "areaServed": "IN",
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.expresshrsolutions.com/",
+    "name": "Express HR Solutions"
+  }
+  </script>
 
   <!-- HERO (Step 3) -->
   <section class="hero" id="hero">
@@ -88,7 +119,7 @@ canonical: "https://www.expresshrsolutions.com"
 
       <div class="about__right">
         <div class="about__visual">
-          <img src="/assets/images/Supervisor Long.png" alt="Express HR Solutions site supervisor" class="about__visual-img">
+          <img src="/assets/images/Supervisor Long.png" alt="Express HR Solutions site supervisor" class="about__visual-img" width="600" height="800">
           <div class="about__visual-overlay">
             <div class="about__stat">
               <span class="about__stat-num">15,000<span class="about__stat-plus">+</span></span>
@@ -293,6 +324,8 @@ canonical: "https://www.expresshrsolutions.com"
               class="blog-card__img"
               src="{{ post.data.featured_image }}"
               alt="{{ post.data.title }}"
+              width="800"
+              height="450"
               loading="lazy"
             >
           </a>
