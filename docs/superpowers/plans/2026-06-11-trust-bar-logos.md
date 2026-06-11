@@ -47,13 +47,13 @@ Target files and sourcing leads. File name is fixed; extension is `.svg` if a cl
 
 **Steps:**
 
-- [ ] **Step 1: Create the directory**
+- [x] **Step 1: Create the directory**
 
 ```bash
 mkdir -p "/Users/rahuldas/Documents/Claude/EHR Website/assets/logos"
 ```
 
-- [ ] **Step 2: For each client in the table, find and download the logo**
+- [x] **Step 2: For each client in the table, find and download the logo**
 
 For each row: WebSearch the sourcing leads (e.g. `Reliance Industries logo svg wikimedia`), open the Wikimedia Commons file page (or company brand page), take the **original file** URL (`upload.wikimedia.org/...`), and download:
 
@@ -63,7 +63,7 @@ curl -sL -o "assets/logos/<name>.<ext>" "<original-file-url>" \
 file "assets/logos/<name>.<ext>"   # expect: SVG XML document or PNG image data
 ```
 
-- [ ] **Step 3: Validate every file against the acceptance criteria**
+- [x] **Step 3: Validate every file against the acceptance criteria**
 
 ```bash
 cd "/Users/rahuldas/Documents/Claude/EHR Website"
@@ -74,11 +74,11 @@ du -sk assets/logos/
 
 View each image (Read tool renders images; for SVG, confirm in browser during Task 4) and confirm criteria 1, 2, 3, 5.
 
-- [ ] **Step 4: Record the fallback list**
+- [x] **Step 4: Record the fallback list**
 
 Write down which clients have no acceptable logo (expected: possibly `prakash-dall`, `runaya`). These keep their text `<span>` in Task 3. The list is needed verbatim in Task 3 Step 1.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add assets/logos && git commit -m "feat: add client logo assets for trust bar"
@@ -91,7 +91,7 @@ git add assets/logos && git commit -m "feat: add client logo assets for trust ba
 **Files:**
 - Modify: `css/styles.css:1086-1101` (`.trust-bar__logo` block)
 
-- [ ] **Step 1: Replace the text-logo block and stale comments**
+- [x] **Step 1: Replace the text-logo block and stale comments**
 
 Replace this (currently at `css/styles.css:1086-1101`):
 
@@ -153,7 +153,7 @@ img.trust-bar__logo--compact { height: 22px; }
 img.trust-bar__logo--tall { height: 36px; }
 ```
 
-- [ ] **Step 2: Build to confirm nothing breaks**
+- [x] **Step 2: Build to confirm nothing breaks**
 
 ```bash
 export PATH="$HOME/.nvm/versions/node/v24.14.0/bin:$PATH"
@@ -162,7 +162,7 @@ cd "/Users/rahuldas/Documents/Claude/EHR Website" && npm run build
 
 Expected: `Wrote N files` with exit 0.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add css/styles.css && git commit -m "style: white monochrome treatment for trust bar logo images"
@@ -175,7 +175,7 @@ git add css/styles.css && git commit -m "style: white monochrome treatment for t
 **Files:**
 - Modify: `index.njk:73-99` (both marquee sets)
 
-- [ ] **Step 1: Replace Set 1 (visible) spans**
+- [x] **Step 1: Replace Set 1 (visible) spans**
 
 Replace lines 73–85 (`<!-- Set 1 -->` block) with the following — **adjust each extension to match the file actually downloaded in Task 1**, and for every client on the Task 1 fallback list keep its original `<span class="trust-bar__logo">Name</span>` line instead of the `<img>`:
 
@@ -195,7 +195,7 @@ Replace lines 73–85 (`<!-- Set 1 -->` block) with the following — **adjust e
         <img src="/assets/logos/prakash-dall.svg" alt="Prakash Dall" class="trust-bar__logo">
 ```
 
-- [ ] **Step 2: Replace Set 2 (clone) spans**
+- [x] **Step 2: Replace Set 2 (clone) spans**
 
 Replace lines for `<!-- Set 2 (clone for seamless loop) -->` with the same 12 entries, each with `alt=""` and `aria-hidden="true"` (text fallbacks keep `<span class="trust-bar__logo" aria-hidden="true">Name</span>`):
 
@@ -215,7 +215,7 @@ Replace lines for `<!-- Set 2 (clone for seamless loop) -->` with the same 12 en
         <img src="/assets/logos/prakash-dall.svg" alt="" aria-hidden="true" class="trust-bar__logo">
 ```
 
-- [ ] **Step 3: Build and verify output**
+- [x] **Step 3: Build and verify output**
 
 ```bash
 export PATH="$HOME/.nvm/versions/node/v24.14.0/bin:$PATH"
@@ -224,7 +224,7 @@ grep -c "/assets/logos/" _site/index.html   # expect: 2 × (number of image logo
 ls _site/assets/logos/                       # expect: all downloaded files copied
 ```
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add index.njk && git commit -m "feat: real client logos in trust bar marquee"
@@ -237,11 +237,11 @@ git add index.njk && git commit -m "feat: real client logos in trust bar marquee
 **Files:**
 - Possibly modify: `index.njk` (add `--compact`/`--tall` modifier classes), `css/styles.css`
 
-- [ ] **Step 1: Start the dev server**
+- [x] **Step 1: Start the dev server**
 
 Use the Claude Preview tools (`preview_start` with the project's "EHR Website" launch config, which runs `npm run dev` → port 3457).
 
-- [ ] **Step 2: Screenshot the trust bar**
+- [x] **Step 2: Screenshot the trust bar**
 
 Scroll/navigate so the trust bar is in view and `preview_screenshot`. Known issue (older note): scrolled sections may screenshot black under Lenis/GSAP compositing. If that happens, fall back to: `cp _site/index.html _site/_check.html`, strip the `<script>` tags from `_check.html` so no JS runs, screenshot `/_check.html`, then delete it.
 
@@ -251,11 +251,11 @@ Checklist on the screenshot:
 - Heights look optically balanced; marquee loops without a jump; no layout shift
 - `preview_console_logs` shows no 404s or errors
 
-- [ ] **Step 3: Apply optical-balance nudges if needed**
+- [x] **Step 3: Apply optical-balance nudges if needed**
 
 Add `trust-bar__logo--compact` (very wide/heavy wordmarks) or `trust-bar__logo--tall` (square-ish marks) classes to specific `<img>` tags in **both** sets in `index.njk`. Re-screenshot to confirm.
 
-- [ ] **Step 4: Commit any tweaks**
+- [x] **Step 4: Commit any tweaks**
 
 ```bash
 git add index.njk css/styles.css && git commit -m "style: optical balance pass on trust bar logos"
@@ -267,7 +267,7 @@ git add index.njk css/styles.css && git commit -m "style: optical balance pass o
 
 ### Task 5: Deploy and verify production
 
-- [ ] **Step 1: Push to GitHub**
+- [x] **Step 1: Push to GitHub**
 
 ```bash
 cd "/Users/rahuldas/Documents/Claude/EHR Website" && git push origin main
@@ -275,7 +275,7 @@ cd "/Users/rahuldas/Documents/Claude/EHR Website" && git push origin main
 
 Vercel auto-deploys `main` (the Decap CMS workflow depends on this integration; no manual `vercel` CLI call needed).
 
-- [ ] **Step 2: Verify production (wait ~90 s after push)**
+- [x] **Step 2: Verify production (wait ~90 s after push)**
 
 ```bash
 curl -s https://www.expresshrsolutions.com/ | grep -c "/assets/logos/"   # expect same count as Task 3 Step 3
@@ -284,6 +284,6 @@ curl -s -o /dev/null -w "%{http_code}" https://www.expresshrsolutions.com/assets
 
 (Adjust the second URL's extension to the actual file.)
 
-- [ ] **Step 3: Report**
+- [x] **Step 3: Report**
 
 Tell Rahul: which logos shipped, which clients remain text fallbacks (need files from him), and show the trust bar screenshot.
