@@ -1114,11 +1114,13 @@ img.trust-bar__logo:hover {
   opacity: 1;
 }
 
-/* Badge-style marks (Dow, ACG) whose lettering is a white fill, not a
-   knockout — brightness(0) would erase the text into a solid blob.
-   invert+grayscale keeps the letters dark inside a light shape. */
+/* Badge-style marks (Dow, ACG, Aditya Birla) whose lettering or background
+   is a white fill, not a knockout — brightness(0) would erase them into a
+   solid blob. invert+grayscale keeps letters dark inside a light shape, and
+   screen blending drops former-white backgrounds (now black) into the page. */
 img.trust-bar__logo--knockout {
   filter: invert(1) grayscale(1) brightness(1.6);
+  mix-blend-mode: screen;
 }
 
 /* Optical balance — some wordmarks run visually heavy/light at equal height */
