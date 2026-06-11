@@ -1074,7 +1074,10 @@ body {
 .trust-bar__track {
   display: flex;
   align-items: center;
-  gap: 72px;
+  /* Spacing lives on the items (margin-right), NOT flex gap: the -50% loop
+     needs the repeat unit to include its trailing space. gap creates n-1
+     spaces for n items, leaving the track half-a-gap short — a visible
+     36px snap at every wrap. */
   width: max-content;
   animation: trust-scroll 28s linear infinite;
 }
@@ -1085,6 +1088,7 @@ body {
 
 /* Text fallback for clients without a usable logo file */
 .trust-bar__logo {
+  margin-right: 72px; /* every item carries its own spacing — see track note */
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 800;
@@ -1140,6 +1144,7 @@ img.trust-bar__logo--tall { height: 36px; }
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
+    row-gap: 24px; /* vertical spacing between wrapped rows (columns come from item margins) */
   }
 }
 
