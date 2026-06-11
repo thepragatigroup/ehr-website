@@ -1083,7 +1083,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Text-based placeholder logos — replace inner content with <img> when real logos arrive */
+/* Text fallback for clients without a usable logo file */
 .trust-bar__logo {
   font-family: var(--font-display);
   font-size: 18px;
@@ -1093,12 +1093,37 @@ body {
   opacity: 0.45;
   white-space: nowrap;
   transition: opacity var(--transition);
-  /* When real <img> logos are used, set height: 28px; width: auto; filter: grayscale(1); */
 }
 
 .trust-bar__logo:hover {
   opacity: 0.85;
 }
+
+/* Image logos — rendered white-monochrome on the dark theme */
+img.trust-bar__logo {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+img.trust-bar__logo:hover {
+  opacity: 1;
+}
+
+/* Badge-style marks (Dow, ACG) whose lettering is a white fill, not a
+   knockout — brightness(0) would erase the text into a solid blob.
+   invert+grayscale keeps the letters dark inside a light shape. */
+img.trust-bar__logo--knockout {
+  filter: invert(1) grayscale(1) brightness(1.6);
+}
+
+/* Optical balance — some wordmarks run visually heavy/light at equal height */
+img.trust-bar__logo--compact { height: 22px; }
+img.trust-bar__logo--tall { height: 36px; }
 
 /* Scrolls exactly 50% — the duplicate set snaps back seamlessly */
 @keyframes trust-scroll {
